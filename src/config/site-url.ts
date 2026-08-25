@@ -1,16 +1,22 @@
 /**
- * The URL used when the `SITE_URL` environment variable is not set.
+ * URL usada quando a variável de ambiente `SITE_URL` não está definida.
  *
- * Two places need the site's own address and they must agree: `astro.config.mjs`
- * sets `site`, which produces every canonical tag, `og:url`, `og:image`, RSS
- * link and sitemap entry — and `site.config.ts` sets `url`, which the JSON-LD,
- * the share cards and the footer read. `astro.config.mjs` runs before
- * `astro:env` exists, so it cannot import `site.config.ts`; without a shared
- * constant the two drift, and a site ends up serving canonical URLs for one
- * domain while telling crawlers it lives at another.
+ * Dois lugares precisam conhecer o endereço do próprio site e devem estar
+ * de acordo: `astro.config.mjs` define `site`, que produz todas as tags
+ * canonical, `og:url`, `og:image`, link do RSS e entrada do sitemap —
+ * enquanto `site.config.ts` define `url`, que é utilizada pelo JSON-LD,
+ * pelos cartões de compartilhamento e pelo rodapé.
  *
- * Set `SITE_URL` in your host's environment and this is never used. It stays a
- * placeholder on purpose: a site that ships without `SITE_URL` should be
- * obviously unconfigured rather than quietly claim someone else's domain.
+ * O `astro.config.mjs` é executado antes que `astro:env` esteja disponível,
+ * portanto não pode importar `site.config.ts`. Sem uma constante
+ * compartilhada, os dois valores podem ficar diferentes e o site pode
+ * fornecer URLs canonical de um domínio enquanto informa aos mecanismos
+ * de busca que pertence a outro.
+ *
+ * Defina `SITE_URL` nas variáveis de ambiente do seu serviço de hospedagem
+ * e este valor nunca será utilizado. Ele permanece como um placeholder
+ * propositalmente: um site publicado sem `SITE_URL` deve ficar claramente
+ * identificado como não configurado, em vez de assumir silenciosamente
+ * o domínio de outra pessoa.
  */
 export const SITE_URL_FALLBACK = 'https://example.com';

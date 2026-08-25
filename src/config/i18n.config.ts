@@ -1,46 +1,50 @@
 /**
- * Internationalization (i18n) configuration.
+ * Configuração de internacionalização (i18n).
  *
- * Off by default — when `enabled: false` or `locales` has a single entry,
- * Astro Rocket emits the same single-locale routes it always has and the
- * `LanguageSwitcher`/`hreflang` machinery is skipped, so there is no
- * runtime or bundle-size cost.
+ * Desativada por padrão — quando `enabled: false` ou `locales` possui uma única entrada,
+ * o Astro Rocket gera as mesmas rotas de idioma único que sempre gerou e
+ * os mecanismos `LanguageSwitcher`/`hreflang` são ignorados, portanto não há
+ * custo de execução nem aumento no tamanho do bundle.
  *
- * Turn on by setting `enabled: true` and listing at least two `locales`.
- * The default locale stays at the site root (`/about`); additional
- * locales live under a prefix (`/nl/about`).
+ * Ative definindo `enabled: true` e listando pelo menos dois `locales`.
+ * O idioma padrão permanece na raiz do site (`/about`); idiomas adicionais
+ * ficam sob um prefixo (`/nl/about`).
  *
- * Lives in its own file (not `site.config.ts`) so the i18n module can
- * be imported by unit tests without pulling in `astro:env/server`.
+ * Mantida em seu próprio arquivo (e não em `site.config.ts`) para que o módulo
+ * de i18n possa ser importado pelos testes unitários sem carregar
+ * `astro:env/server`.
  */
 
 export interface I18nConfig {
-  /** Master switch — must be true AND `locales.length > 1` to take effect */
+  /** Interruptor principal — deve ser true E `locales.length > 1` para entrar em vigor */
   enabled: boolean;
-  /** BCP 47 code for the default locale, served at the site root */
+  /** Código BCP 47 do idioma padrão, servido na raiz do site */
   defaultLocale: string;
-  /** All locales the site ships, including the default. Use BCP 47 codes (e.g. 'en', 'nl', 'de', 'fr-BE') */
+  /** Todos os idiomas disponibilizados pelo site, incluindo o padrão.
+   * Use códigos BCP 47 (ex.: 'en', 'nl', 'de', 'fr-BE')
+   */
   locales: string[];
-  /** Display names for the LanguageSwitcher, keyed by locale code */
+  /** Nomes exibidos no LanguageSwitcher, identificados pelo código do idioma */
   localeNames?: Record<string, string>;
   /**
-   * When true, Astro reads the visitor's `Accept-Language` header on
-   * the root URL and redirects to a matching locale. Visitors can
-   * always override via the LanguageSwitcher.
+   * Quando true, o Astro lê o cabeçalho `Accept-Language` do visitante na
+   * URL raiz e redireciona para um idioma correspondente.
+   * O visitante sempre pode substituir essa escolha pelo LanguageSwitcher.
    */
   detectBrowserLocale?: boolean;
 }
 
 const i18nConfig: I18nConfig = {
-  enabled: false,
-  defaultLocale: 'en',
-  locales: ['en'],
+  enabled: true,
+  defaultLocale: 'pt',
+  locales: ['pt', 'en'],
   localeNames: {
     en: 'English',
     nl: 'Nederlands',
     de: 'Deutsch',
     fr: 'Français',
     es: 'Español',
+    pt: 'Português',
   },
   detectBrowserLocale: false,
 };

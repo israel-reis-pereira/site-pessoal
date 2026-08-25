@@ -1,34 +1,44 @@
 /**
- * Navigation Configuration
+ * Configuração da navegação
  *
- * Defines navigation menus for the site. Astro handles routing via the
- * filesystem — this only controls which links appear in nav menus.
+ * Define os menus de navegação do site. O Astro controla o roteamento
+ * por meio do sistema de arquivos — este arquivo controla apenas quais
+ * links aparecem nos menus de navegação.
  *
- * - `navItems`       → main (header) navigation
- * - `footerNavItems` → footer navigation, configured independently from
- *                      the header so you can show different links in the
- *                      footer (e.g. add a Privacy link, drop About, etc.)
- * - `legalLinks`     → small legal-style links (Privacy, Terms, Imprint…)
- *                      shown in the footer's bottom row when supported
- *                      by the active footer layout.
+ * - `navItems`        → navegação principal (cabeçalho)
+ * - `footerNavItems`  → navegação do rodapé, configurada
+ *                      independentemente do cabeçalho para que você possa
+ *                      exibir links diferentes no rodapé
+ *                      (por exemplo, adicionar um link de Privacidade
+ *                      ou remover Sobre)
+ * - `legalLinks`      → pequenos links relacionados a questões legais
+ *                      (Privacidade, Termos, Aviso legal etc.)
+ *                      exibidos na linha inferior do rodapé quando
+ *                      suportados pelo layout de rodapé ativo.
  *
  * ## i18n
  *
- * You write each link once. When i18n is enabled, the Header and Footer
- * localize it automatically for the active locale:
+ * Você escreve cada link apenas uma vez. Quando o i18n está ativado,
+ * Header e Footer traduzem automaticamente os links para o idioma
+ * atualmente ativo:
  *
- * - **href** is locale-prefixed via `localizedPath` — `/blog` stays `/blog`
- *   on the default locale and becomes `/<locale>/blog` elsewhere — so nav
- *   keeps the visitor inside their locale. External, `mailto:`/`tel:`, and
- *   `#anchor` hrefs are left untouched.
- * - **label** is translated when you give the item a `labelKey` pointing at
- *   a string in `src/i18n/<locale>.json` (resolved with `t()`); without one,
- *   the literal `label` is used as-is.
+ * - `href` recebe o prefixo do idioma por meio de `localizedPath` —
+ *   `/blog` permanece `/blog` no idioma padrão e se torna
+ *   `/<locale>/blog` nos demais idiomas — mantendo o visitante
+ *   dentro do idioma atual. URLs externas, `mailto:`, `tel:` e
+ *   `#anchor` permanecem inalteradas.
  *
- * For the rare case where a locale needs a structurally different label or
- * path (e.g. a localized slug like `/over-ons`), add a `locales` override —
- * see `NavItemOverride`. With i18n off, none of this runs and the output is
- * identical to a single-locale site.
+ * - `label` é traduzido quando você fornece um `labelKey` que aponta
+ *   para uma string em `src/i18n/<locale>.json` (resolvida por `t()`);
+ *   sem um `labelKey`, o `label` literal é utilizado como está.
+ *
+ * No caso raro em que um idioma precisa de um rótulo ou caminho
+ * estruturalmente diferente (por exemplo, um slug localizado como
+ * `/over-ons`), adicione uma substituição em `locales` —
+ * consulte `NavItemOverride`.
+ *
+ * Com o i18n desativado, nada disso é executado e o resultado é
+ * idêntico ao de um site de idioma único.
  */
 import { localizedPath, t, defaultLocale, type Locale } from '@/i18n';
 
@@ -99,7 +109,7 @@ export const footerNavItems: NavItem[] = [
   { label: 'Blog', href: '/blog', order: 3, labelKey: 'nav.items.blog' },
   { label: 'About', href: '/about', order: 4, labelKey: 'nav.items.about' },
   { label: 'Contact', href: '/contact', order: 5, labelKey: 'nav.items.contact' },
-  { label: 'GitHub', href: 'https://github.com/hansmartensdev/Astro-Rocket', order: 6, external: true },
+  { label: 'GitHub', href: 'https://github.com/israel-reis-pereira', order: 6, external: true },
 ];
 
 export const legalLinks: LegalLink[] = [];
@@ -127,10 +137,11 @@ export const footerLinkGroups: FooterLinkGroupConfig[] = [
     title: 'Got questions?',
     links: [
       { label: 'FAQ', href: '/about#faq' },
-      { label: 'Email', href: 'mailto:hello@hansmartens.dev' },
-      { label: 'GitHub', href: 'https://github.com/hansmartensdev/Astro-Rocket', external: true },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/hansmartensdev', external: true },
-      { label: 'Bluesky', href: 'https://bsky.app/profile/hansmartensdev.bsky.social', external: true },
+      { label: 'Email', href: 'mailto:israeldasilvabtos@gmail.com' },
+      { label: 'GitHub', href: 'https://github.com/israel-reis-pereira', external: true },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/israel-silva-dos-reis-pereira', external: true },
+      { label: 'Bluesky', href: 'https://bsky.app/profile/israel-reis-pereira.bsky.social', external: true },
+      { label: 'Instagram', href: 'https://instagram.com/israelsilvadosreispereira', external: true },
     ],
   },
 ];
