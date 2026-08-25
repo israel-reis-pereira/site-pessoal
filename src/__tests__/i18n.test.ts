@@ -17,13 +17,13 @@ describe('i18n t() helper', () => {
     expect(t('common.readMore', 'en')).toBe('Read more');
   });
 
-  it('returns the Dutch translation when locale is nl', () => {
-    expect(t('common.readMore', 'nl')).toBe('Lees meer');
+  it('returns the Portuguese translation when locale is pt-br', () => {
+    expect(t('common.readMore', 'pt-br')).toBe('Ler mais');
   });
 
   it('falls back to the default-locale string when the locale has no entry', () => {
-    // 'de' has no dictionary loaded yet — should fall back to English
-    expect(t('common.readMore', 'de')).toBe('Read more');
+    // 'de' has no dictionary loaded yet — should fall back to pt-br.
+    expect(t('common.readMore', 'de')).toBe('Ler mais');
   });
 
   it('returns the key itself when no translation exists in any dictionary', () => {
@@ -32,7 +32,7 @@ describe('i18n t() helper', () => {
 
   it('interpolates {placeholder} variables', () => {
     expect(t('blog.readingTime', 'en', { minutes: 5 })).toBe('5 min read');
-    expect(t('blog.readingTime', 'nl', { minutes: 5 })).toBe('5 min leestijd');
+    expect(t('blog.readingTime', 'pt-br', { minutes: 5 })).toBe('5 min de leitura');
   });
 
   it('leaves unknown placeholders untouched', () => {
@@ -42,14 +42,11 @@ describe('i18n t() helper', () => {
 
 describe('i18n tData() helper', () => {
   it('returns a structured (array) value by dotted key', () => {
-    // Asserts the shape rather than the copy. The previous version read
-    // `pages.about.intro.facts` and checked for the literal "Astro 7"; the
-    // about page was later restructured, `intro` stopped existing, and the
-    // test failed for a reason that had nothing to do with tData().
     const items = tData<{ icon: string; title: string; description: string }[]>(
       'pages.about.principles.items',
       'en'
     );
+
     expect(Array.isArray(items)).toBe(true);
     expect(items?.length).toBeGreaterThan(0);
     expect(items?.[0]).toEqual(
@@ -61,14 +58,15 @@ describe('i18n tData() helper', () => {
     );
   });
 
-  it('returns the Dutch structured value when locale is nl', () => {
-    const hero = tData<{ badge: string }>('pages.about.hero', 'nl');
-    expect(hero?.badge).toBe('Over');
+  it('returns the Portuguese structured value when locale is pt-br', () => {
+    const hero = tData<{ badge: string }>('pages.about.hero', 'pt-br');
+
+    expect(hero?.badge).toBe('Sobre mim');
   });
 
   it('falls back to the default-locale value when the locale has no entry', () => {
-    // 'de' has no dictionary loaded yet — should fall back to the English data
     const cards = tData<unknown[]>('pages.about.faq.cards', 'de');
+
     expect(Array.isArray(cards)).toBe(true);
     expect(cards?.length).toBe(2);
   });
@@ -79,66 +77,81 @@ describe('i18n tData() helper', () => {
 });
 
 describe('i18n getSecondaryLocales()', () => {
-  it('returns an empty list when i18n is disabled (single locale)', () => {
-    // Default config: enabled is false and locales is ['en'], so there are no
-    // extra locales to generate prefixed routes for.
-    expect(getSecondaryLocales()).toEqual([]);
+  it('returns pt-br as the only default locale when configured', () => {
+    expect(getSecondaryLocales()).toEqual(['en']);
   });
 });
 
 describe('i18n localizedPath()', () => {
-  it('returns the path unchanged when i18n is disabled (single locale)', () => {
-    // With default config (locales: ['en']), i18n is effectively off
-    expect(localizedPath('/about')).toBe('/about');
-    expect(localizedPath('/')).toBe('/');
-    expect(localizedPath('blog/hello')).toBe('/blog/hello');
+  it('keeps the default Portuguese locale at the site root', () => {
+    expect(localizedPath('/about', 'pt-br')).toBe('/about');
+    expect(localizedPath('/', 'pt-br')).toBe('/');
+    expect(localizedPath('blog/hello', 'pt-br')).toBe('/blog/hello');
+  });
+
+  it('prefixes the secondary English locale', () => {
+    expect(localizedPath('/about', 'en')).toBe('/en/about');
+    expect(localizedPath('/', 'en')).toBe('/en');
+    expect(localizedPath('blog/hello', 'en')).toBe('/en/blog/hello');
   });
 });
 
 describe('i18n locale helpers', () => {
   it('resolves an unknown locale to the default', () => {
-    expect(resolveLocale('xx')).toBe('en');
-    expect(resolveLocale(undefined)).toBe('en');
+    expect(resolveLocale('xx')).toBe('pt-br');
+    expect(resolveLocale(undefined)).toBe('pt-br');
   });
 
   it('validates a configured locale', () => {
+    expect(isValidLocale('pt-br')).toBe(true);
     expect(isValidLocale('en')).toBe(true);
     expect(isValidLocale('xx')).toBe(false);
     expect(isValidLocale(undefined)).toBe(false);
   });
 
   it('returns the display name when configured, otherwise the code', () => {
+    expect(getLocaleName('pt-br')).toBe('Português (Brasil)');
     expect(getLocaleName('en')).toBe('English');
-    // 'nl' is in localeNames even though it's not in the active locales list
-    expect(getLocaleName('nl')).toBe('Nederlands');
     expect(getLocaleName('xx')).toBe('xx');
   });
 });
 
 describe('i18n getLocaleFromPath()', () => {
   it('returns the default locale for the root path', () => {
-    expect(getLocaleFromPath('/')).toBe('en');
+    expect(getLocaleFromPath('/')).toBe('pt-br');
   });
 
   it('returns the default locale when no recognized prefix is present', () => {
-    expect(getLocaleFromPath('/about')).toBe('en');
-    expect(getLocaleFromPath('/blog/hello-world')).toBe('en');
+    expect(getLocaleFromPath('/about')).toBe('pt-br');
+    expect(getLocaleFromPath('/blog/hello-world')).toBe('pt-br');
+  });
+
+  it('recognizes the English locale prefix', () => {
+    expect(getLocaleFromPath('/en/about')).toBe('en');
+    expect(getLocaleFromPath('/en/blog')).toBe('en');
   });
 
   it('returns the default locale when the first segment is not a configured locale', () => {
-    // Default config only has 'en' active — 'nl' is not recognized
-    expect(getLocaleFromPath('/nl/about')).toBe('en');
-    expect(getLocaleFromPath('/zh-cn/blog')).toBe('en');
+    expect(getLocaleFromPath('/nl/about')).toBe('pt-br');
+    expect(getLocaleFromPath('/zh-cn/blog')).toBe('pt-br');
   });
 
   it('normalizes paths without a leading slash', () => {
-    expect(getLocaleFromPath('about')).toBe('en');
+    expect(getLocaleFromPath('about')).toBe('pt-br');
   });
 });
 
 describe('i18n stripLocaleFromPath()', () => {
-  it('leaves a path unchanged when the first segment is not a configured locale', () => {
+  it('leaves paths without a locale prefix unchanged', () => {
     expect(stripLocaleFromPath('/about')).toBe('/about');
+  });
+
+  it('removes the English locale prefix', () => {
+    expect(stripLocaleFromPath('/en/about')).toBe('/about');
+    expect(stripLocaleFromPath('/en/blog/hello')).toBe('/blog/hello');
+  });
+
+  it('does not remove an unconfigured locale prefix', () => {
     expect(stripLocaleFromPath('/nl/about')).toBe('/nl/about');
   });
 
@@ -148,29 +161,28 @@ describe('i18n stripLocaleFromPath()', () => {
 });
 
 describe('i18n swapLocaleInPath()', () => {
-  it('returns the path unchanged when targeting the default locale (no prefix added)', () => {
-    expect(swapLocaleInPath('/about', 'en')).toBe('/about');
+  it('keeps the Portuguese default locale at the root', () => {
+    expect(swapLocaleInPath('/about', 'pt-br')).toBe('/about');
   });
 
-  it('returns the same path when i18n is disabled, regardless of target', () => {
-    // With default config (single locale), localizedPath is a no-op
-    expect(swapLocaleInPath('/about', 'nl')).toBe('/about');
+  it('adds the English prefix when switching from Portuguese', () => {
+    expect(swapLocaleInPath('/about', 'en')).toBe('/en/about');
+  });
+
+  it('removes the English prefix when switching back to Portuguese', () => {
+    expect(swapLocaleInPath('/en/about', 'pt-br')).toBe('/about');
+  });
+
+  it('keeps the English prefix when targeting English', () => {
+    expect(swapLocaleInPath('/en/about', 'en')).toBe('/en/about');
   });
 });
 
 describe('i18n meta titles never embed the site name', () => {
-  // SEO.astro renders the document <title> as `${title} — ${siteConfig.name}`,
-  // so any meta-title dictionary value that already contains the site name
-  // would render it twice (e.g. "Blog — Astro Rocket — Astro Rocket"). Every
-  // key below feeds that `title` prop and must therefore stay brand-free.
-  //
-  // The shipped brand is checked as a literal on purpose: importing
-  // site.config.ts here would pull in `astro:env/server` (see i18n.config.ts),
-  // and this guards the theme's own default dictionaries against a regression.
   const SITE_NAME = 'Astro Rocket';
+
   const METATITLE_KEYS = [
     'blog.metaTitle',
-    'blog.pageMetaTitle',
     'blog.tagMetaTitle',
     'projects.metaTitle',
     'projects.pageMetaTitle',
@@ -182,7 +194,7 @@ describe('i18n meta titles never embed the site name', () => {
     'pages.contact.meta.title',
   ];
 
-  const cases = ['en', 'nl'].flatMap((locale) =>
+  const cases = ['en', 'pt-br'].flatMap((locale) =>
     METATITLE_KEYS.map((key) => [locale, key] as [string, string])
   );
 
