@@ -1,0 +1,755 @@
+{
+  "nav": {
+    "skipToContent": "Pular para o conteúdo",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "selectLanguage": "Selecionar idioma",
+    "currentLanguage": "Idioma atual",
+    "mainNav": "Navegação principal",
+    "mobileNav": "Navegação móvel",
+    "toggleMenu": "Alternar menu",
+    "sectionNavigate": "Navegar",
+    "searchSite": "Pesquisar neste site",
+    "sectionTheme": "Tema",
+    "sectionLanguage": "Idioma",
+    "sectionConnect": "Conectar",
+    "items": {
+      "home": "Início",
+      "services": "Competências",
+      "projects": "Projetos",
+      "blog": "Anotações",
+      "about": "Sobre",
+      "contact": "Contato"
+    }
+  },
+  "common": {
+    "readMore": "Ler mais",
+    "loading": "Carregando…",
+    "backToTop": "Voltar ao topo",
+    "search": "Pesquisar",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "home": "Início",
+    "map": "Mapa",
+    "mapConsentPrompt": "Aceite os cookies para carregar o mapa interativo.",
+    "viewOnGoogleMaps": "Ver no Google Maps",
+    "themeModeTitle": "Tema: {mode} (clique para alternar)",
+    "googleMaps": "Google Maps",
+    "progress": "Progresso",
+    "themeMode": "Tema: {mode}",
+    "browseByTag": "Navegar por tag",
+    "techStack": "Tecnologias",
+    "togglePassword": "Mostrar/ocultar senha",
+    "breadcrumb": "Trilha de navegação",
+    "copyCode": "Copiar código para a área de transferência",
+    "dismiss": "Dispensar",
+    "notifications": "Notificações",
+    "closeDialog": "Fechar diálogo",
+    "tabs": "Abas",
+    "verticalTabs": "Abas verticais"
+  },
+  "blog": {
+    "title": "Anotações",
+    "description": "Registros de estudos, testes e descobertas técnicas",
+    "readingTime": "{minutes} min de leitura",
+    "publishedOn": "Publicado em {date}",
+    "updatedOn": "Atualizado em {date}",
+    "writtenBy": "Escrito por {author}",
+    "tagsLabel": "Tags",
+    "featured": "Destaque",
+    "draft": "Rascunho",
+    "noPostsFound": "Nenhuma anotação encontrada.",
+    "tableOfContents": "Índice",
+    "shareThisPost": "Compartilhar esta anotação",
+    "relatedPosts": "Anotações relacionadas",
+    "share": "Compartilhar:",
+    "shareOn": "Compartilhar no {platform}",
+    "copyLink": "Copiar link",
+    "metaTitle": "Anotações — Israel",
+    "metaDescription": "Registros práticos sobre programação, bancos de dados, arquitetura, infraestrutura, ferramentas e experimentos técnicos.",
+    "heroBadge": "Registro técnico",
+    "heroDescription": "Um lugar para registrar o que estou estudando, testando, quebrando e entendendo.",
+    "allPosts": "Todas as anotações",
+    "noPosts": "Nenhuma anotação encontrada",
+    "pageMetaTitle": "Anotações — Página {page}",
+    "pageMetaDescription": "Página {page} de {total} — registros de estudos, experimentos e descobertas técnicas.",
+    "pageBadge": "Página {page} de {total}",
+    "newestPosts": "Anotações mais recentes",
+    "tagMetaTitle": "#{tag} — Anotações",
+    "tagMetaDescription": "Anotações relacionadas a \"{tag}\".",
+    "tagBadge": "Tag",
+    "tagCountOne": "{count} anotação marcada com \"{tag}\".",
+    "tagCountOther": "{count} anotações marcadas com \"{tag}\".",
+    "tagEmpty": "Nenhuma anotação encontrada para esta tag.",
+    "tagBackToAll": "Voltar para todas as anotações",
+    "onThisPage": "Nesta página",
+    "tocShow": "Mostrar",
+    "tocHide": "Ocultar",
+    "backToBlog": "Voltar às anotações",
+    "updated": "Atualizado",
+    "rssFeed": "Feed RSS",
+    "cta": {
+      "heading": "Entender antes de escalar",
+      "description": "Uso este espaço para registrar experimentos, decisões técnicas e aquilo que aprendi construindo sistemas.",
+      "button": "Ver anotações"
+    }
+  },
+  "comments": {
+    "title": "Comentários",
+    "loadError": "Não foi possível carregar os comentários. Atualize a página e tente novamente.",
+    "requiresJs": "Os comentários precisam de JavaScript para carregar."
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Sistemas, experimentos e estudos práticos",
+    "viewProject": "Ver projeto",
+    "viewSource": "Ver código-fonte",
+    "noProjectsFound": "Nenhum projeto encontrado.",
+    "carouselChooseSlide": "Escolher slide",
+    "carouselNextSlide": "Próximo slide",
+    "carouselPreviousSlide": "Slide anterior",
+    "galleryLabel": "Galeria de mídia",
+    "galleryClose": "Fechar galeria",
+    "galleryNextImage": "Próxima imagem",
+    "galleryPreviousImage": "Imagem anterior",
+    "metaTitle": "Projetos — Israel",
+    "metaDescription": "Projetos construídos para estudar, validar ideias e compreender sistemas na prática.",
+    "heroBadge": "Projetos",
+    "heroDescription": "Construo versões compactas para entender o problema antes de tentar resolver algo maior.",
+    "allProjects": "Todos os projetos",
+    "pageMetaTitle": "Projetos — Página {page}",
+    "pageMetaDescription": "Página {page} de {total} — projetos, experimentos e estudos técnicos.",
+    "pageBadge": "Página {page} de {total}",
+    "tagMetaTitle": "#{tag} — Projetos",
+    "tagMetaDescription": "Projetos relacionados a \"{tag}\".",
+    "tagBadge": "Tag",
+    "tagCountOne": "{count} projeto marcado com \"{tag}\".",
+    "tagCountOther": "{count} projetos marcados com \"{tag}\".",
+    "tagEmpty": "Nenhum projeto encontrado para esta tag.",
+    "tagBackToAll": "Voltar para todos os projetos",
+    "backToProjects": "Voltar para projetos",
+    "moreProjects": "Mais projetos",
+    "ctaBadge": "Próximo experimento",
+    "ctaHeading": "Uma ideia precisa ser testada",
+    "ctaLead": "Projetos são a forma mais direta que encontrei de transformar uma dúvida técnica em algo que posso observar, medir e entender.",
+    "ctaPrimary": "Ver projetos",
+    "ctaSecondary": "Conhecer meu processo",
+    "closingHeading": "Tenho mais coisas para testar",
+    "closingLead": "Alguns projetos terminam como sistemas. Outros terminam como documentação. Ambos fazem parte do processo."
+  },
+  "pagination": {
+    "page": "Página {current} de {total}",
+    "label": "Paginação",
+    "previousPage": "Página anterior",
+    "nextPage": "Próxima página",
+    "morePages": "Mais páginas"
+  },
+  "errors": {
+    "pageNotFound": "Página não encontrada",
+    "pageNotFoundMessage": "A página que você procura não existe ou foi movida.",
+    "goHome": "Voltar ao início",
+    "metaTitle": "Página não encontrada",
+    "metaDescription": "Esta página foi movida, removida ou nunca existiu.",
+    "badge": "404 — página não encontrada",
+    "titleLead": "Página não",
+    "titleHighlight": "encontrada.",
+    "description": "O caminho informado não corresponde a nenhum recurso disponível.",
+    "backHome": "Voltar ao início",
+    "browseBlog": "Ver anotações",
+    "tryInstead": "Talvez você esteja procurando",
+    "projectsDesc": "Projetos, sistemas e experimentos técnicos.",
+    "blogDesc": "Estudos, testes e registros técnicos.",
+    "contactTitle": "Contato",
+    "contactDesc": "Entre em contato para conversar sobre tecnologia, projetos ou oportunidades."
+  },
+  "newsletter": {
+    "heading": "Acompanhar as anotações",
+    "description": "Receba novos registros técnicos quando forem publicados.",
+    "emailPlaceholder": "Digite seu e-mail",
+    "subscribe": "Assinar",
+    "subscribing": "Assinando…",
+    "success": "Inscrição realizada com sucesso!",
+    "genericError": "Algo deu errado",
+    "notConfigured": "Ainda não configurado — defina RESEND_API_KEY e RESEND_AUDIENCE_ID para ativar. Somente você pode ver esta mensagem.",
+    "unavailable": "As inscrições não estão disponíveis no momento.",
+    "error": "Falha ao realizar a inscrição. Tente novamente."
+  },
+  "contact": {
+    "heading": "Entre em contato",
+    "name": "Nome",
+    "email": "E-mail",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "send": "Enviar mensagem",
+    "sending": "Enviando…",
+    "success": "Mensagem enviada com sucesso!",
+    "genericError": "Algo deu errado",
+    "notConfigured": "Ainda não configurado — defina RESEND_API_KEY para ativar. Somente você pode ver esta mensagem.",
+    "unavailable": "Este formulário não está disponível no momento.",
+    "error": "Falha ao enviar a mensagem. Tente novamente."
+  },
+  "theme": {
+    "selectColourTheme": "Selecionar tema de cores",
+    "colourTheme": "Tema de cores",
+    "colourMode": "Modo de cores",
+    "modeTrigger": "Tema: {mode}. Clique para alterar.",
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "currentlyLight": "Atualmente claro",
+    "currentlyDark": "Atualmente escuro",
+    "swatchLabel": "Tema {name}"
+  },
+  "search": {
+    "placeholder": "Pesquisar projetos, anotações e páginas…",
+    "inputLabel": "Consulta de pesquisa",
+    "resultsLabel": "Resultados da pesquisa",
+    "hint": "Comece a digitar para pesquisar no site.",
+    "noResults": "Nenhum resultado para “{query}”",
+    "unavailable": "O índice de pesquisa é gerado durante o build e não está disponível no <code class=\"rounded bg-secondary px-1.5 py-0.5 text-xs\">astro dev</code>.<br />Execute <code class=\"rounded bg-secondary px-1.5 py-0.5 text-xs\">pnpm build &amp;&amp; pnpm preview</code> para testar localmente."
+  },
+  "video": {
+    "playLabel": "Reproduzir vídeo: {title}",
+    "watchOn": "Assistir no YouTube"
+  },
+  "footer": {
+    "copyright": "© {year} {siteName}",
+    "credit": "Desenvolvido por Israel",
+    "builtWith": "Construído com Astro",
+    "groups": {
+      "site": "Site",
+      "topics": "Tópicos",
+      "projects": "Projetos",
+      "questions": "Contato"
+    },
+    "followOn": "Acompanhar no {platform}"
+  },
+  "pages": {
+    "about": {
+      "meta": {
+        "title": "Sobre — Israel",
+        "description": "Estudante de Sistemas de Informação e desenvolvedor em formação, interessado em compreender sistemas através de construção, testes e documentação prática."
+      },
+      "hero": {
+        "badge": "Sobre mim",
+        "titleLead": "Construir para",
+        "typingWords": [
+          "entender",
+          "testar",
+          "validar",
+          "documentar",
+          "automatizar",
+          "evoluir"
+        ],
+        "typingWordsMobile": [
+          "entender",
+          "testar",
+          "validar",
+          "documentar"
+        ],
+        "description": "Sou Israel, estudante de Sistemas de Informação e desenvolvedor em formação. Não estudo tecnologia apenas para saber usar ferramentas. Construo coisas para entender como elas funcionam."
+      },
+      "whatYouGet": {
+        "badge": "Como eu aprendo",
+        "heading": "Teoria precisa encontrar a prática",
+        "lead": "Quando encontro um conceito novo, prefiro construir uma versão pequena, observar seu comportamento e documentar o que realmente aconteceu.",
+        "items": [
+          {
+            "icon": "code",
+            "title": "Construção prática",
+            "description": "Transformo conceitos abstratos em pequenos sistemas que podem ser executados, observados e modificados."
+          },
+          {
+            "icon": "search",
+            "title": "Investigação",
+            "description": "Quando algo não funciona, procuro isolar o problema antes de adicionar complexidade."
+          },
+          {
+            "icon": "test-tube",
+            "title": "Experimentação",
+            "description": "Testo hipóteses em ambientes controlados para descobrir quais soluções realmente fazem sentido."
+          },
+          {
+            "icon": "database",
+            "title": "Dados",
+            "description": "Tenho interesse em bancos de dados, modelagem, integridade, consultas e no caminho que os dados percorrem dentro de um sistema."
+          },
+          {
+            "icon": "server",
+            "title": "Infraestrutura",
+            "description": "Estou aprofundando conhecimentos em Docker, ambientes, automação e infraestrutura como parte do funcionamento real dos sistemas."
+          },
+          {
+            "icon": "git-branch",
+            "title": "Versionamento",
+            "description": "Uso Git e GitHub para registrar mudanças, experimentar alternativas e manter os projetos rastreáveis."
+          },
+          {
+            "icon": "file-text",
+            "title": "Documentação",
+            "description": "Registro o processo porque uma solução que não pode ser explicada também é difícil de reproduzir e manter."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Segurança",
+            "description": "Considero segurança parte da construção: credenciais, consultas parametrizadas, validação e isolamento precisam existir desde o início."
+          },
+          {
+            "icon": "workflow",
+            "title": "Automação",
+            "description": "Busco reduzir tarefas repetitivas e transformar processos manuais em fluxos previsíveis."
+          }
+        ]
+      },
+      "principles": {
+        "badge": "Princípios",
+        "heading": "Complexidade sob demanda",
+        "lead": "Não acredito em arquitetura complexa apenas porque ela é tecnicamente possível. A solução deve responder ao problema real.",
+        "items": [
+          {
+            "icon": "target",
+            "title": "Problema antes da tecnologia",
+            "description": "Primeiro procuro entender o problema. Depois escolho a tecnologia necessária para resolvê-lo."
+          },
+          {
+            "icon": "layers",
+            "title": "Evolução incremental",
+            "description": "Prefiro começar pequeno, validar o domínio e deixar a arquitetura crescer conforme surgem necessidades reais."
+          },
+          {
+            "icon": "zap",
+            "title": "Objetividade",
+            "description": "Evito abstrações, ferramentas e processos que não acrescentem valor concreto ao sistema."
+          }
+        ]
+      },
+      "stack": {
+        "badge": "Stack atual",
+        "title": "Ferramentas que estou utilizando",
+        "description": "Minha stack muda conforme o problema. Atualmente trabalho e estudo principalmente com PHP, Node.js, JavaScript, C#/.NET, Blazor, Astro, MySQL, MariaDB, Git e Docker."
+      },
+      "faq": {
+        "badge": "Contexto",
+        "heading": "Perguntas sobre meu percurso",
+        "lead": "Algumas respostas diretas sobre quem sou e como trabalho.",
+        "cards": [
+          {
+            "icon": "graduation-cap",
+            "title": "Formação",
+            "items": [
+              {
+                "question": "O que você estuda atualmente?",
+                "answer": "Sou estudante de Bacharelado em Sistemas de Informação na UniBarretos. Entrei em 2025 e atualmente estou no 4º período."
+              },
+              {
+                "question": "Você possui formação técnica?",
+                "answer": "Sim. Concluí o Técnico em Desenvolvimento de Sistemas na Etec Coronel Raphael Brandão, cursado entre 2022 e 2024."
+              },
+              {
+                "question": "Quais áreas despertam mais interesse?",
+                "answer": "Tenho interesse especialmente em Arquitetura de Software, Infraestrutura, DevOps/SRE e Engenharia de Dados. São áreas que combinam sistemas, automação, confiabilidade e resolução de problemas."
+              },
+              {
+                "question": "Você trabalha apenas com uma linguagem?",
+                "answer": "Não. Não escolho uma linguagem por identidade. Escolho ferramentas de acordo com o problema e com o contexto. Atualmente tenho experiência com PHP, JavaScript, Node.js e C#/.NET, entre outras tecnologias."
+              },
+              {
+                "question": "Por que você gosta de construir versões pequenas?",
+                "answer": "Porque uma implementação compacta permite observar o fluxo real do sistema sem esconder o funcionamento atrás de muitas abstrações. Depois de entender o mecanismo, fica mais fácil decidir se vale a pena escalar a solução."
+              }
+            ]
+          },
+          {
+            "icon": "cpu",
+            "title": "Forma de trabalhar",
+            "items": [
+              {
+                "question": "Como você resolve um problema técnico?",
+                "answer": "Primeiro tento reproduzir o problema. Depois isolo as variáveis envolvidas, testo hipóteses e comparo os resultados. Só então escolho a solução."
+              },
+              {
+                "question": "Você prefere arquitetura simples?",
+                "answer": "Prefiro arquitetura proporcional ao problema. Simplicidade não significa ausência de estrutura; significa não introduzir complexidade sem uma necessidade que a justifique."
+              },
+              {
+                "question": "Você gosta de documentação?",
+                "answer": "Sim. Documentação é uma forma de transformar uma descoberta individual em conhecimento que pode ser consultado e reproduzido depois."
+              },
+              {
+                "question": "Como você trabalha em equipe?",
+                "answer": "Procuro primeiro entender o objetivo e dividir responsabilidades. Quando existe um vácuo técnico ou operacional, naturalmente assumo a organização necessária para que o projeto continue avançando."
+              },
+              {
+                "question": "Qual é seu objetivo profissional?",
+                "answer": "Construir uma carreira sólida em tecnologia, desenvolver competências que tenham valor a longo prazo e alcançar estabilidade profissional e financeira."
+              }
+            ]
+          }
+        ]
+      },
+      "openSource": {
+        "badge": "Código aberto",
+        "heading": "Aprender também é compartilhar",
+        "description": "Meus projetos e registros públicos funcionam como um histórico do que estou aprendendo. O objetivo é poder olhar para trás, entender decisões antigas e permitir que outras pessoas acompanhem o processo.",
+        "button": "Ver no GitHub",
+        "cards": [
+          {
+            "title": "Experimentação",
+            "text": "Uso projetos pequenos para validar conceitos antes de aplicá-los em sistemas maiores."
+          },
+          {
+            "title": "Documentação",
+            "text": "Registro problemas, decisões e soluções para construir um manual pessoal de referência."
+          },
+          {
+            "title": "Evolução",
+            "text": "Minha stack não é fixa. Ela evolui conforme encontro problemas que exigem novas ferramentas ou novas formas de pensar."
+          }
+        ]
+      },
+      "cta": {
+        "badge": "Próximo passo",
+        "heading": "Ainda estou construindo",
+        "description": "Minha carreira está em formação. Cada projeto, disciplina, experimento e problema resolvido adiciona uma nova peça ao conjunto.",
+        "button": "Ver projetos"
+      }
+    },
+    "services": {
+      "meta": {
+        "title": "Competências — Israel",
+        "description": "Competências técnicas, áreas de estudo e tecnologias utilizadas por Israel em projetos e experimentos."
+      },
+      "includedLabel": "Onde estou concentrando meus estudos",
+      "hero": {
+        "badge": "Competências",
+        "titleLead": "Construir, entender",
+        "titleHighlight": "e melhorar sistemas",
+        "description": "Meu foco está em compreender o sistema como um todo: código, dados, infraestrutura, segurança e os processos que conectam cada parte.",
+        "jumpLabels": [
+          "Desenvolvimento",
+          "Dados",
+          "Infraestrutura"
+        ]
+      },
+      "design": {
+        "badge": "Desenvolvimento",
+        "heading": "Desenvolvimento de sistemas",
+        "paragraphs": [
+          "Minha base começou no desenvolvimento web e continua sendo uma das principais formas que utilizo para aprender.",
+          "Trabalho com PHP, JavaScript, Node.js, HTML, CSS e C#/.NET. Também venho explorando Blazor e Astro em projetos mais recentes."
+        ],
+        "included": [
+          {
+            "lead": "Backend",
+            "text": "Experiência com PHP, Node.js e C#/.NET para construção de aplicações."
+          },
+          {
+            "lead": "Web",
+            "text": "HTML, CSS, JavaScript, Bootstrap e Astro para interfaces e aplicações web."
+          },
+          {
+            "lead": "Arquitetura",
+            "text": "Interesse em modularização, separação de responsabilidades e evolução incremental dos sistemas."
+          },
+          {
+            "lead": "Segurança",
+            "text": "Prepared Statements, proteção contra SQL Injection, isolamento de credenciais e validação de entradas."
+          },
+          {
+            "lead": "Versionamento",
+            "text": "Git e GitHub para controle das mudanças e organização dos projetos."
+          }
+        ],
+        "ctaLabel": "Ver projetos"
+      },
+      "development": {
+        "badge": "Dados",
+        "heading": "Bancos de dados e dados",
+        "paragraphs": [
+        "Dados são uma parte central de qualquer sistema. Tenho experiência acadêmica e prática com bancos relacionais e venho aprofundando meu entendimento sobre como dados são armazenados, consultados e protegidos.",
+        "Trabalho com MySQL e MariaDB, utilizando modelagem relacional, SQL, integridade e consultas parametrizadas. Tenho interesse em avançar gradualmente para pipelines, processamento e outros aspectos relacionados ao trabalho com dados."
+      ],
+        "included": [
+          {
+            "lead": "SQL",
+            "text": "Consultas, filtros, relacionamentos, agregações e manipulação de dados."
+          },
+          {
+            "lead": "Modelagem",
+            "text": "Modelagem relacional, normalização e definição de estruturas coerentes."
+          },
+          {
+            "lead": "Segurança",
+            "text": "Uso de Prepared Statements e práticas para reduzir riscos de SQL Injection."
+          },
+          {
+            "lead": "Administração",
+            "text": "Contato com MySQL, MariaDB e ferramentas como MySQL Workbench."
+          },
+          {
+            "lead": "Próximo objetivo",
+            "text": "Aprofundar pipelines, processamento e infraestrutura voltada para dados."
+          }
+        ],
+        "ctaLabel": "Ver projetos relacionados"
+      },
+      "performance": {
+        "badge": "Infraestrutura",
+        "heading": "Infraestrutura, automação e confiabilidade",
+        "paragraphs": [
+        "Estou estudando a parte que existe entre o código e o sistema funcionando de verdade: ambientes, containers, automação, deploy e observabilidade.",
+        "Docker já faz parte dos meus estudos. Também tenho interesse em práticas de DevOps e SRE e venho explorando esses conceitos gradualmente, sempre começando por problemas concretos em vez de adicionar ferramentas sem necessidade."
+      ],
+        "included": [
+          {
+            "lead": "Docker",
+            "text": "Criação e utilização de ambientes isolados e reproduzíveis."
+          },
+          {
+            "lead": "Automação",
+            "text": "Interesse em transformar tarefas repetitivas em processos previsíveis."
+          },
+          {
+            "lead": "Ambientes",
+            "text": "Compreensão das diferenças entre desenvolvimento, teste e produção."
+          },
+          {
+            "lead": "Confiabilidade",
+            "text": "Interesse em entender como sistemas podem ser monitorados, recuperados e mantidos."
+          },
+          {
+            "lead": "Evolução",
+            "text": "Estudo gradual de CI/CD, observabilidade e práticas de SRE."
+          }
+        ],
+        "ctaLabel": "Conhecer meus projetos"
+      },
+      "process": {
+        "badge": "Meu processo",
+        "heading": "Como transformo uma dúvida em conhecimento",
+        "lead": "Um processo simples: reproduzir, isolar, testar, entender e registrar.",
+        "steps": [
+          {
+            "title": "Definir o problema",
+            "description": "Antes de escolher uma tecnologia, procuro entender exatamente o que precisa ser resolvido."
+          },
+          {
+            "title": "Construir uma versão mínima",
+            "description": "Crio uma implementação pequena o suficiente para enxergar o fluxo completo sem abstrações desnecessárias."
+          },
+          {
+            "title": "Testar as possibilidades",
+            "description": "Mudo uma variável por vez, observo os resultados e tento encontrar os limites da solução."
+          },
+          {
+            "title": "Registrar o que foi descoberto",
+            "description": "Documentar o processo transforma o experimento em uma referência que pode ser consultada e reutilizada."
+          }
+        ]
+      },
+      "faq": {
+        "badge": "Perguntas",
+        "heading": "Como penso sobre tecnologia",
+        "lead": "Algumas respostas que resumem minha forma de trabalhar.",
+        "cards": [
+          {
+            "icon": "target",
+            "title": "Decisões técnicas",
+            "items": [
+              {
+                "question": "Qual tecnologia devo usar?",
+                "answer": "A que resolve o problema dentro das restrições existentes. Não acredito que exista uma tecnologia universalmente melhor."
+              },
+              {
+                "question": "Você prefere monólito ou microsserviços?",
+                "answer": "Depende do domínio. Um monólito modular pode ser uma solução excelente quando o problema não exige a complexidade operacional de múltiplos serviços."
+              },
+              {
+                "question": "Você gosta de arquiteturas complexas?",
+                "answer": "Gosto de arquitetura bem definida. Complexidade, porém, precisa ter uma razão. Se uma solução simples resolve o problema, adicionar camadas apenas para parecer sofisticado não melhora o sistema."
+              },
+              {
+                "question": "Você troca de tecnologia com frequência?",
+                "answer": "Exploro tecnologias diferentes, mas isso não significa trocar ferramentas sem critério. Cada experimento serve para entender onde uma tecnologia realmente se encaixa."
+              },
+              {
+                "question": "O que significa 'testar ideias por diversão'?",
+                "answer": "Significa transformar curiosidade em pequenos experimentos. Em vez de apenas ler sobre algo, construo uma implementação para descobrir como aquilo realmente se comporta."
+              }
+            ]
+          },
+          {
+            "icon": "workflow",
+            "title": "Carreira",
+            "items": [
+              {
+                "question": "Qual área profissional você busca?",
+                "answer": "Estou construindo uma base que pode me levar para Arquitetura de Software, DevOps/SRE ou Engenharia de Dados."
+              },
+              {
+                "question": "Você já escolheu uma especialização definitiva?",
+                "answer": "Ainda não. Prefiro construir uma base forte e deixar a especialização surgir conforme descubro quais problemas gosto de resolver e onde consigo gerar mais valor."
+              },
+              {
+                "question": "O que você procura em uma oportunidade?",
+                "answer": "Um ambiente onde eu possa aprender, assumir responsabilidades, resolver problemas reais e evoluir tecnicamente sem depender de complexidade artificial."
+              },
+              {
+                "question": "Qual é seu objetivo de longo prazo?",
+                "answer": "Construir uma carreira estável em tecnologia, desenvolver competências duradouras e alcançar segurança financeira para sustentar minha vida e minha futura família."
+              },
+              {
+                "question": "O que você está fazendo agora para chegar lá?",
+                "answer": "Estou conciliando graduação, projetos pessoais, experimentação técnica, participação em eventos acadêmicos e construção de uma base cada vez mais ampla em desenvolvimento, dados e infraestrutura."
+              }
+            ]
+          }
+        ]
+      },
+      "cta": {
+        "badge": "Em evolução",
+        "heading": "Estou construindo minha base",
+        "description": "Ainda estou no começo da carreira, mas o objetivo é claro: transformar conhecimento técnico em capacidade real de construir, operar e evoluir sistemas.",
+        "primary": "Ver projetos",
+        "secondary": "Sobre mim"
+      }
+    },
+    "contact": {
+      "meta": {
+        "title": "Contato — Israel",
+        "description": "Entre em contato com Israel para conversar sobre tecnologia, projetos, oportunidades acadêmicas ou profissionais."
+      },
+      "hero": {
+        "badge": "Contato",
+        "titleLead": "Vamos conversar sobre",
+        "titleHighlight": "tecnologia",
+        "description": "Estou aberto a oportunidades, projetos, colaborações e conversas técnicas que possam contribuir para minha evolução profissional."
+      },
+      "formTitle": "Mensagem",
+      "channelsTitle": "Outros canais",
+      "channelsSubtitle": "Escolha o canal que fizer mais sentido.",
+      "emailLabel": "E-mail",
+      "emailNote": "Enviar uma mensagem",
+      "socialNote": "Acompanhar meu trabalho",
+      "basedIn": "Localizado em {country}"
+    },
+    "home": {
+      "meta": {
+        "title": "Israel — Sistemas de Informação e Desenvolvimento",
+        "description": "Israel é estudante de Sistemas de Informação e desenvolvedor em formação, interessado em arquitetura de software, infraestrutura, dados, automação e construção prática de sistemas."
+      },
+      "hero": {
+        "badge": "Sistemas de Informação · Desenvolvimento",
+        "titleLine1": "Construindo",
+        "titleLine2": "sistemas",
+        "titleLine3": "para entender como funcionam",
+        "description": "Sou Israel, estudante de Sistemas de Informação e desenvolvedor em formação. Gosto de testar ideias construindo versões compactas, investigar problemas e documentar o que descubro.",
+        "descriptionMobile": "Estudante de Sistemas de Informação. Construindo, testando e documentando.",
+        "github": "Ver no GitHub",
+        "getStarted": "Conhecer os projetos"
+      },
+      "services": {
+        "badge": "Áreas de interesse",
+        "heading": "Desenvolvimento, dados e infraestrutura",
+        "lead": "Uma base técnica ampla para entender o sistema de ponta a ponta.",
+        "learnMore": "Conhecer",
+        "cards": [
+          {
+            "icon": "code",
+            "title": "Desenvolvimento",
+            "description": "PHP, Node.js, JavaScript e C#/.NET para construir aplicações e testar conceitos na prática."
+          },
+          {
+            "icon": "database",
+            "title": "Dados",
+            "description": "MySQL, MariaDB, SQL e modelagem relacional como base para compreender como sistemas armazenam e processam informação."
+          },
+          {
+            "icon": "server",
+            "title": "Infraestrutura",
+            "description": "Docker, ambientes, automação e os fundamentos que conectam o código ao sistema funcionando em produção."
+          }
+        ]
+      },
+      "workWithMe": {
+        "badge": "Como eu penso",
+        "heading": "Problema primeiro. Complexidade depois.",
+        "lead": "Minha forma de trabalhar é baseada em investigação, experimentação e evolução incremental.",
+        "cards": [
+          {
+            "icon": "search",
+            "title": "Investigar antes de abstrair",
+            "description": "Procuro entender o comportamento real de um problema antes de escondê-lo atrás de abstrações."
+          },
+          {
+            "icon": "test-tube",
+            "title": "Construir para validar",
+            "description": "Pequenos experimentos permitem testar hipóteses rapidamente e descobrir o que realmente funciona."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Pensar em segurança",
+            "description": "Segurança, integridade e confiabilidade fazem parte do sistema e não devem ser tratadas como etapas posteriores."
+          },
+          {
+            "icon": "file-text",
+            "title": "Registrar para evoluir",
+            "description": "Documentação transforma experiências isoladas em conhecimento reutilizável."
+          }
+        ],
+        "cta": "Conhecer meu processo"
+      },
+      "portfolio": {
+        "badge": "Projetos",
+        "heading": "O que estou construindo",
+        "lead": "Projetos acadêmicos, experimentos pessoais e sistemas desenvolvidos para aprender na prática.",
+        "viewAll": "Ver todos os projetos"
+      },
+      "testimonials": {
+        "badge": "Percurso acadêmico",
+        "heading": "Onde venho colocando isso em prática",
+        "lead": "Além dos projetos pessoais, participo de atividades acadêmicas que colocam a teoria em contato com problemas reais.",
+        "items": [
+          {
+            "quote": "Participação em hackathons, apresentações e eventos acadêmicos faz parte da minha tentativa de transformar conhecimento teórico em capacidade prática.",
+            "name": "Israel",
+            "role": "Sistemas de Informação"
+          },
+          {
+            "quote": "Cada projeto serve também como registro de uma etapa do meu desenvolvimento técnico: o que funcionou, o que falhou e o que precisa ser melhorado.",
+            "name": "Israel",
+            "role": "Desenvolvedor em formação"
+          }
+        ]
+      },
+      "aboutTeaser": {
+        "badge": "Sobre mim",
+        "headingLine1": "Estudante, desenvolvedor,",
+        "headingLine2": "experimentador.",
+        "para1WithLocation": "Tenho formação técnica em Desenvolvimento de Sistemas e atualmente curso Sistemas de Informação em {location}. Minha forma de aprender é construir, testar e documentar.",
+        "para1NoLocation": "Tenho formação técnica em Desenvolvimento de Sistemas e atualmente curso Sistemas de Informação. Minha forma de aprender é construir, testar e documentar.",
+        "para2": "Meu objetivo é construir uma carreira sólida em tecnologia, desenvolvendo competências em arquitetura, infraestrutura e dados.",
+        "moreAboutMe": "Mais sobre mim",
+        "statsIntro": "Alguns pontos do meu percurso.",
+        "stat1": "Técnico em Desenvolvimento de Sistemas",
+        "stat2": "Sistemas de Informação",
+        "stat3": "Projetos e experimentos práticos",
+        "basedIn": "Localizado em"
+      },
+      "blog": {
+        "badge": "Do meu registro",
+        "heading": "Últimas anotações",
+        "viewAll": "Ver todas as anotações"
+      },
+      "cta": {
+        "badge": "Contato",
+        "heading": "Tem uma oportunidade ou ideia?",
+        "description": "Estou aberto a oportunidades profissionais, projetos, colaborações e conversas técnicas.",
+        "primary": "Entrar em contato",
+        "secondary": "Conhecer meu percurso"
+      }
+    }
+  }
+}
