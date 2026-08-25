@@ -6,7 +6,7 @@ import { formatDate } from '../lib/utils';
 const date = new Date(2026, 5, 24); // 24 June 2026
 
 describe('formatDate()', () => {
-  it('formats in long English for the default locale', () => {
+  it('formats in long English for the English locale', () => {
     expect(formatDate(date, 'en')).toBe('June 24, 2026');
   });
 
@@ -19,7 +19,7 @@ describe('formatDate()', () => {
   });
 
   it('falls back to the site default locale when none is passed', () => {
-    // Default config defaultLocale is 'en' → long English format
-    expect(formatDate(date)).toBe('June 24, 2026');
+    // Default config defaultLocale is 'pt-br' → Brazilian Portuguese format.
+    expect(formatDate(date)).toBe('24 de junho de 2026');
   });
 });

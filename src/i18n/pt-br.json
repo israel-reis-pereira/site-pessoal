@@ -244,11 +244,12 @@
           "evoluir"
         ],
         "typingWordsMobile": [
-          "entender",
-          "testar",
-          "validar",
-          "documentar"
-        ],
+        "entender",
+        "testar",
+        "validar",
+        "documentar",
+        "i18n integrado"
+      ],
         "description": "Sou Israel, estudante de Sistemas de Informação e desenvolvedor em formação. Não estudo tecnologia apenas para saber usar ferramentas. Construo coisas para entender como elas funcionam."
       },
       "whatYouGet": {

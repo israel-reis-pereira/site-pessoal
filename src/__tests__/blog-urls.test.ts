@@ -19,23 +19,21 @@ import {
 // These run with the default i18n config (single locale 'en', i18n off), so
 // every URL must stay unprefixed — this is the non-breaking guarantee for the
 // single-locale sites that make up the majority of installs.
-describe('blog URL helpers (i18n disabled — default)', () => {
+describe('blog URL helpers (i18n enabled)', () => {
   it('strips the locale prefix from a post id to get its slug', () => {
-    expect(getPostSlug('en/hello-world')).toBe('hello-world');
-    expect(getPostSlug('nl/hallo-wereld', 'nl')).toBe('hallo-wereld');
-    // No matching prefix → id returned unchanged.
-    expect(getPostSlug('hello-world', 'en')).toBe('hello-world');
+    expect(getPostSlug('pt-br/ola-mundo')).toBe('ola-mundo');
+    expect(getPostSlug('en/hello-world', 'en')).toBe('hello-world');
+    expect(getPostSlug('hello-world', 'pt-br')).toBe('hello-world');
   });
 
-  it('builds an unprefixed post URL', () => {
-    expect(getPostUrl('en/hello-world')).toBe('/blog/hello-world');
-    // Even a non-default locale stays unprefixed while i18n is off.
-    expect(getPostUrl('nl/hallo-wereld', 'nl')).toBe('/blog/hallo-wereld');
+  it('builds a locale-aware post URL', () => {
+    expect(getPostUrl('pt-br/ola-mundo')).toBe('/blog/ola-mundo');
+    expect(getPostUrl('en/hello-world', 'en')).toBe('/en/blog/hello-world');
   });
 
   it('builds the blog index base URL', () => {
     expect(getBlogBaseUrl()).toBe('/blog');
-    expect(getBlogBaseUrl('nl')).toBe('/blog');
+    expect(getBlogBaseUrl('en')).toBe('/en/blog');
   });
 
   it('maps page 1 to the blog root and pages 2+ to /blog/page/N', () => {
@@ -49,7 +47,7 @@ describe('blog URL helpers (i18n disabled — default)', () => {
     expect(getTagUrl('Web Performance')).toBe('/blog/tag/web-performance');
   });
 
-  it('exposes no secondary locales when i18n is off', () => {
-    expect(getSecondaryLocales()).toEqual([]);
+  it('exposes the configured secondary locales', () => {
+    expect(getSecondaryLocales()).toEqual(['en']);
   });
 });
