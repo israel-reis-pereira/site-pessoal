@@ -1,395 +1,99 @@
-# Pendências — Astro Rocket
-## Data: 24/08/2026
-
-Documento para retomar amanhã a personalização do template Astro Rocket.
-
-## 1. Favicon e branding
-- `public/favicon.svg` foi removido após o teste com o Chapolin.
-- O servidor ainda tenta acessar `/favicon.ico`, `/favicon.svg` e `/favicon-32x32.png`, retornando 404.
-- `src/config/site.config.ts` ainda aponta `branding.favicon.svg` e `branding.logo.imageUrl` para `/favicon.svg`.
-- `src/config/branding.ts` contém `SITE_NAME = 'Israel Silva dos Reis Pereira'` e `THEME_COLOR = '#00ad28'`.
-
-### Pendente
-- Verificar `astro.config.mjs` e o mecanismo que gera os arquivos de favicon.
-- Entender se o favicon é gerado automaticamente a partir do monograma.
-- Confirmar quais arquivos de favicon são necessários.
-- Só depois ajustar/remover referências quebradas.
-
-## 2. Monograma e avatar
-- O template possui identidade por monograma.
-- Para o site, a inicial esperada é `I`, de Israel.
-- `public/avatar.svg` contém atualmente um `A` branco sobre fundo laranja e provavelmente é herança da identidade original/demo.
-
-### Pendente
-- Descobrir onde o monograma é gerado.
-- Descobrir se `avatar.svg` é avatar, logo ou parte do sistema de favicon.
-- Verificar se o sistema consegue gerar `I` automaticamente.
-- Decidir se `avatar.svg` deve ser substituído, removido ou mantido separado.
-
-## 3. Identidade do site
-Já atualizado:
-- Nome: Israel Silva dos Reis Pereira
-- Descrição: `Desenvolvedor Full Stack focado em desenvolvimento web, sistemas e soluções digitais.`
-- Tagline: `Desenvolvedor Full Stack`
-- Footer note: `Desenvolvimento web e soluções digitais`
-- E-mail: `israelsilvapereirareis@gmail.com`
-- Cidade: Barretos
-- Estado: SP
-- País: Brasil
-- Redes sociais: atualizadas.
-
-### Pendente
-- Avaliar `street`, `zip` e `phone`.
-- Definir a URL real do site.
-- Substituir `https://example.com` em `src/config/site-url.ts` quando houver domínio, ou garantir `SITE_URL` no ambiente de hospedagem.
-
-## 4. Internacionalização
-- Foi criado `src/i18n/pt.json`.
-- Boa parte da configuração/documentação já foi traduzida.
-- `src/config/i18n.config.ts` ainda está com:
-  - `enabled: false`
-  - `defaultLocale: 'en'`
-  - `locales: ['en']`
-
-### Pendente
-- Decidir se o site será somente português.
-- Se for pt-br, avaliar `defaultLocale: 'pt-br'` e `locales: ['pt-br']`.
-- Revisar `localeNames`.
-- Conferir todas as chaves presentes em `pt.json`.
-- Não ativar i18n antes de confirmar as rotas e traduções.
-
-## 5. Traduções e referências ao template original
-Arquivos já trabalhados:
-- `AGENTS.md`
-- `src/config/consent.config.ts`
-- `src/config/i18n.config.ts`
-- `src/config/site-url.ts`
-- `src/config/site.config.ts`
-
-### Pendente
-Fazer uma busca geral por:
-- textos em inglês visíveis ao visitante;
-- documentação ainda em inglês;
-- referências a Hans Martens;
-- URLs, e-mails e nomes herdados do demo.
-
-Não traduzir identificadores, propriedades, chaves de i18n ou APIs que precisam permanecer em inglês.
-
-## 6. `src/config/nav.config.ts`
-Ainda existem referências da identidade original:
-- `https://github.com/hansmartensdev/Astro-Rocket`
-- `hello@hansmartens.dev`
-- `https://www.linkedin.com/in/hansmartensdev`
-- `https://bsky.app/profile/hansmartensdev.bsky.social`
-
-Também há labels em inglês:
-- Home
-- Services
-- Projects
-- Blog
-- About
-- Contact
-- Got questions?
-- Email
-
-### Pendente
-- Substituir os links do Hans pelos dados do proprietário quando aplicável.
-- Conferir quais páginas realmente existirão.
-- Revisar `footerLinkGroups`.
-- Usar i18n para labels quando necessário, preservando as chaves internas.
-
-## 7. `tsconfig.json`
-
-O TypeScript informou que `baseUrl` está deprecated e deixará de funcionar no TypeScript 7.
-
-Configuração atual:
-
-```json
-"baseUrl": ".",
-
-"paths": {
-  "@/*": ["src/*"]
-}
-```
-
-### Pendente
-- Investigar a forma recomendada pelo Astro/TypeScript atual para manter o alias `@/*`.
-- Não usar `ignoreDeprecations` apenas para esconder o aviso sem entender a migração.
-- Confirmar se `baseUrl` ainda é necessário para o alias.
-- Verificar a versão de TypeScript usada pelo projeto.
-
-## 8. `AGENTS.md`
-- Foi traduzido/adaptado para português.
-- O diff é grande e precisa de revisão comparativa.
-
-### Pendente
-Conferir se a tradução preservou:
-- arquitetura;
-- convenções;
-- comandos;
-- restrições;
-- nomes técnicos;
-- instruções para agentes de código.
-
-## 9. `src/config/site.config.ts`
-Já atualizado:
-- identidade;
-- descrição;
-- autor;
-- e-mail;
-- localização;
-- redes sociais.
-
-### Pendente
-- Resolver favicon/monograma antes de manter `branding.logo.imageUrl: '/favicon.svg'`.
-- Revisar `authorImage: '/avatar.svg'`.
-- Conferir se `ogImage: '/og/default.png'` existe/é gerado.
-- Revisar comentários restantes em inglês.
-- Procurar valores herdados do template/demo.
-
-## 10. Git — estado da sessão
-O `git status` mostrou modificados:
-- `AGENTS.md`
-- `src/config/branding.ts`
-- `src/config/consent.config.ts`
-- `src/config/i18n.config.ts`
-- `src/config/site-url.ts`
-- `src/config/site.config.ts`
-- `tsconfig.json`
-
-E arquivo não rastreado:
-- `src/i18n/pt.json`
-
-O `git diff --stat` também registrou alterações em `src/config/nav.config.ts`.
-
-### Para subir tudo
-```powershell
-git status
-git diff --stat
-git add .
-git commit -m "chore: personaliza identidade e traduções"
-git push origin main
-git status
-```
-
-O esperado no final é a árvore de trabalho limpa e a branch sincronizada com `origin/main`.
-
-# Próxima sessão — ordem recomendada
-
-1. Resolver favicon.
-2. Entender e corrigir o sistema de monograma.
-3. Revisar `avatar.svg`.
-4. Revisar referências restantes ao Hans/Astro Rocket.
-5. Revisar `nav.config.ts`.
-6. Revisar i18n/pt-br.
-7. Resolver o aviso de `baseUrl` do TypeScript.
-8. Fazer varredura geral por textos em inglês.
-9. Executar build/teste completo.
-10. Considerar a personalização inicial concluída somente após essa revisão.
-
-## Regra de segurança para amanhã
-Não remover funcionalidades do Astro Rocket apenas por ainda não serem usadas. Primeiro classificar cada item como:
-- funcionamento do template;
-- identidade/demo a substituir;
-- funcionalidade opcional desativada;
-- documentação/texto traduzível;
-- identificador técnico que deve permanecer em inglês.
-
-A prioridade continua sendo entender a arquitetura antes de remover ou reescrever partes do template.
-
----
-info desoganizadas
-Pendente
-Investigar a forma recomendada pelo Astro/TypeScript atual para manter o alias @/*.
-Não usar ignoreDeprecations apenas para esconder o aviso sem entender a migração.
-Confirmar se baseUrl ainda é necessário para o alias.
-Verificar a versão de TypeScript usada pelo projeto.
-8. Build — erro de symlink no Windows / Vercel
-
-O pnpm run build consegue executar praticamente todo o processo de build:
-
-sincronização do conteúdo;
-geração dos tipos;
-construção dos entrypoints;
-prerenderização das rotas;
-otimização das imagens;
-rearranjo dos assets.
-
-Porém, o processo termina com erro durante o hook astro:build:done do adapter @astrojs/vercel.
-
-O erro observado foi:
-
-EPERM: operation not permitted, symlink ...
-
-Na primeira execução ocorreu com a dependência:
-
-clsx
-
-Na segunda execução ocorreu com:
-
-resend
-
-O erro acontece ao tentar criar links simbólicos dentro de:
-
-.vercel/output/functions/_render.func/node_modules/
-Pendente
-Investigar por que o Windows está impedindo a criação dos symlinks durante o empacotamento do adapter @astrojs/vercel.
-Verificar se o comportamento está relacionado ao pnpm + symlinks + Windows.
-Verificar permissões/configuração do Windows para criação de links simbólicos.
-Verificar se o problema está relacionado à versão atual do @astrojs/vercel.
-Confirmar se o problema ocorre somente no ambiente Windows local ou também no ambiente de deploy.
-Não trocar o adapter nem alterar a arquitetura antes de identificar a causa.
-Não considerar o build totalmente concluído enquanto esse erro persistir.
-Estado atual
-
-astro check:
-
-0 errors
-0 warnings
-9 hints
-
-Portanto, o código analisado pelo Astro está sem erros de diagnóstico.
-
-pnpm run build:
-
-Falha no estágio final do adapter @astrojs/vercel.
-
-O problema atual não aparenta ser um erro de TypeScript ou de compilação das páginas.
-
-9. Avisos do astro check
-
-O astro check terminou com:
-
-0 errors
-0 warnings
-9 hints
-
-Os hints encontrados estão relacionados a:
-
-APIs Zod depreciadas (z.string().url());
-MediaQueryList.addListener depreciado;
-uso de define:vars em script;
-referência a words em TypingEffect.astro.
-Pendente
-Revisar individualmente os 9 hints.
-Classificar cada um como:
-código legado/depreciação;
-compatibilidade;
-possível problema real;
-comportamento intencional;
-melhoria futura.
-Corrigir somente após entender o impacto.
-Não transformar hints em erros artificiais apenas para obter uma saída "limpa".
-10. Content collection pages
-
-Durante o build aparece:
-
-[WARN] [glob-loader] No files found matching "**/*.{md,mdx}" in directory "src\content\pages"
-
-E durante o prerender:
-
-The collection "pages" does not exist or is empty.
-Please check your content config file for errors.
-
-Apesar disso, o build continua gerando as páginas e não apresenta erro de compilação.
-
-Pendente
-Verificar a definição da collection pages em src/content.config.ts.
-Confirmar se src/content/pages deveria conter arquivos .md ou .mdx.
-Verificar se essa collection ainda é utilizada pelas páginas atuais.
-Determinar se a ausência de conteúdo é intencional ou se existem arquivos de conteúdo que foram removidos/movidos.
-Não remover a collection antes de entender suas dependências.
-11. SITE_URL
-
-O build informa:
-
-SITE_URL is not set
-
-Como consequência, URLs canônicas, og:image, RSS e sitemap são gerados utilizando:
-
-https://example.com
-Pendente
-Definir a URL real do site quando ela estiver disponível.
-Verificar a configuração de src/config/site-url.ts.
-Configurar SITE_URL corretamente no ambiente de produção.
-Fazer uma nova verificação de SEO/URLs após definir o domínio.
-12. Dependências/depreciações do ambiente
-
-O Node também apresenta:
-
-[DEP0040] DeprecationWarning: The `punycode` module is deprecated.
-Pendente
-Identificar qual dependência está utilizando punycode.
-Verificar se o aviso vem de uma dependência do template ou de uma dependência transitiva.
-Não alterar dependências apenas para eliminar o aviso sem identificar sua origem.
-Observação
-
-Esse aviso não impediu o astro check nem a maior parte do processo de build.
-
-13. Estado geral da validação
-Confirmado
-pnpm exec astro check executa corretamente.
-Resultado: 0 errors.
-O Astro consegue gerar os tipos.
-O Vite consegue compilar os entrypoints.
-As rotas são prerenderizadas.
-As imagens são processadas.
-O problema do build ocorre posteriormente, durante o empacotamento do adapter Vercel.
-Pendente
-Resolver o erro de symlink EPERM.
-Revisar os 9 hints.
-Investigar a collection pages vazia.
-Configurar SITE_URL.
-Investigar o aviso de punycode.
-Somente depois realizar uma nova validação completa.
-
-### Uma mudança de organização que eu recomendo
-
-Como seu documento já está crescendo, eu **não colocaria cada aviso pequeno dentro das seções dos arquivos afetados**. Isso pode transformar o documento em uma mistura de configuração + diagnóstico + histórico.
-
-A estrutura mais limpa seria:
-
-**1. Pendências funcionais/de arquitetura**
-- favicon
-- monograma
-- identidade
-- i18n
-- referências do template
-
-**2. Pendências técnicas**
-- `tsconfig`
-- build/Vercel
-- content collection
-- `SITE_URL`
-- depreciações
-
-**3. Pendências de documentação**
-- `AGENTS.md`
-- traduções
-- referências ao template
-
-**4. Estado de validação**
-- `astro check`
-- `build`
-- testes
-- Git
-
-Isso permitirá que amanhã você me envie **a lista de pendências atualizada**, e nós podemos trabalhar item por item sem perder o contexto.
-
-## Três visões sobre o que temos agora
-
-**Visão racional:** o projeto está em uma situação melhor do que o erro do `build` pode sugerir. O `astro check` retornou **0 erros**, e o build chega até a fase final. Portanto, não há evidência, pelos logs fornecidos, de que o código esteja estruturalmente quebrado.
-
-**Visão operacional:** o `build` ainda deve ser considerado **não resolvido**. O `EPERM` acontece no empacotamento do Vercel e apareceu com duas dependências diferentes (`clsx` e `resend`), o que fortalece a hipótese de problema no processo de symlink/empacotamento, e não necessariamente nessas duas bibliotecas.
-
-**Visão de longo prazo:** vale muito a pena registrar esses problemas agora. Se simplesmente corrigirmos cada aviso conforme aparece, podemos acabar fazendo alterações desnecessárias no Astro Rocket original. O seu próprio critério de **entender → classificar → decidir → alterar** é mais seguro para esse template.
-
-### O que pode dar errado se corrigirmos tudo agora
-
-1. Podemos "resolver" o `baseUrl` de uma forma que quebre os aliases.
-2. Podemos remover a collection `pages` porque está vazia e descobrir depois que alguma funcionalidade dependia dela.
-3. Podemos trocar o adapter Vercel para eliminar o `EPERM`, mas criar uma incompatibilidade com a estratégia de deploy.
-4. Podemos atualizar dependências para eliminar depreciações e introduzir mudanças de comportamento.
-5. Podemos interpretar os `9 hints` como problemas reais quando alguns podem ser apenas compatibilidade com APIs antigas.
-
-Então **concordo com seu plano**: encerramos o tópico do `tsconfig` com o estado atual documentado, e no próximo chat você traz a lista de pendências. A partir dela podemos estabelecer uma ordem de investigação sem misturar correções com a análise arquitetural do template.
+# Pendências verificadas — Astro Rocket
+
+**Data da análise:** 24/08/2026
+
+**Escopo:** diagnóstico do estado atual; nenhum código foi corrigido nesta análise.
+
+## Resumo da validação
+
+- `pnpm.cmd check`: concluído com **0 errors, 0 warnings e 9 hints**.
+- `pnpm.cmd lint`: concluído com **0 errors e 2 warnings**.
+- `pnpm.cmd build`: falha no hook final do adapter `@astrojs/vercel`.
+- `pnpm.cmd test:run`: não inicia a suíte no Windows; o esbuild não consegue resolver `vitest.config.ts` e informa acesso negado ao diretório `../../..`.
+- A coleção `pages` está declarada, mas `src/content/pages` não contém arquivos `.md` ou `.mdx`.
+- `SITE_URL` não está definido; o build usa `https://example.com` como fallback.
+
+## Pendências técnicas
+
+### 1. Falha `EPERM` ao empacotar o adapter Vercel no Windows
+
+- **Causa:** durante o hook `astro:build:done`, `@astrojs/vercel@11.0.0` tenta criar um symlink para a dependência pnpm `clsx` em `.vercel/output/functions/_render.func/node_modules/`. O Windows retorna `EPERM: operation not permitted, symlink`.
+- **Evidência:** o build compila os entrypoints, prerenderiza as rotas, processa imagens e falha somente no empacotamento do adapter; a stack aponta para `copyDependenciesToFunction` em `@astrojs/vercel`.
+- **Impacto:** `pnpm build` termina com código 1 e o artefato Vercel não pode ser considerado válido. A ocorrência foi observada no ambiente Windows local; ainda não há evidência de falha no deploy.
+- **Prioridade:** alta.
+- **Próximo passo:** reproduzir fora da limitação de symlinks do Windows e comparar com Linux/CI; depois verificar a compatibilidade entre pnpm, `@astrojs/vercel@11.0.0` e permissões de criação de links. Não trocar o adapter antes dessa comparação.
+
+### 2. `SITE_URL` ausente
+
+- **Causa:** não existe `SITE_URL` no ambiente usado para a análise; `astro.config.mjs` e `src/config/site-url.ts` então usam `https://example.com`.
+- **Impacto:** canonical URLs, `og:url`, `og:image`, RSS e sitemap são gerados apontando para o domínio de exemplo. O build avisa, mas não interrompe a geração.
+- **Prioridade:** alta antes de publicar.
+- **Próximo passo:** definir o domínio real como `SITE_URL` no ambiente de build/deploy e repetir a verificação de canonical, JSON-LD, RSS, sitemap e cards OG.
+
+### 3. Coleção `pages` vazia
+
+- **Causa:** `src/content.config.ts` declara a coleção `pages` com glob em `src/content/pages`, mas o diretório não possui arquivos correspondentes.
+- **Impacto:** o Astro emite o warning `[glob-loader] No files found` e, durante o prerender, repete `The collection "pages" does not exist or is empty`. O build continua, mas a validação de conteúdo que espera páginas não tem entradas para analisar.
+- **Prioridade:** média.
+- **Próximo passo:** confirmar se páginas customizadas devem ser mantidas nessa coleção. Se sim, adicionar conteúdo conforme o schema; se não, mapear todos os usos da coleção e decidir, conscientemente, se a declaração e a validação associada continuam necessárias.
+
+## Hints do `astro check`
+
+O comando chama todos estes diagnósticos de `hint`; eles não são erros de compilação, mas precisam de decisão antes de considerar a checagem limpa.
+
+### 4. APIs `.url()` do Zod depreciadas
+
+- **Causa:** `z.string().url()` em `src/content.config.ts:117`, `:118` e `:172` usa uma API marcada como deprecated pela versão instalada do Zod.
+- **Impacto:** não quebra o build atual, mas pode exigir migração quando o Zod ou o TypeScript removerem a assinatura.
+- **Prioridade:** baixa.
+- **Próximo passo:** verificar a API de validação de URL recomendada pela versão do Zod adotada e atualizar os três campos em conjunto, preservando o schema das coleções.
+
+### 5. Fallback `MediaQueryList.addListener`
+
+- **Causa:** `src/layouts/BaseLayout.astro:200` e `src/components/layout/ThemeModeDropdown.astro:370` mantêm `addListener` como fallback para navegadores antigos.
+- **Impacto:** a API é depreciada, embora mantenha compatibilidade pretendida com Safari antigo; o comportamento atual não foi demonstrado como quebrado.
+- **Prioridade:** baixa.
+- **Próximo passo:** confirmar a matriz de navegadores suportada e testar a troca de tema em navegadores modernos e no fallback antes de remover ou alterar o caminho legado.
+
+### 6. `define:vars` no script da galeria
+
+- **Causa:** `src/components/projects/ProjectGallery.astro:164` usa `<script define:vars=...>`; o Astro informa que o script será tratado como `is:inline` e não terá processamento de TypeScript ou pacotes.
+- **Impacto:** atualmente é um hint de semântica do Astro, mas alterações futuras no script podem pressupor processamento que não ocorrerá.
+- **Prioridade:** baixa.
+- **Próximo passo:** confirmar que o script precisa apenas dos valores serializados e documentar/explicitar a intenção ou remodelar a passagem de dados se houver necessidade de processamento.
+
+### 7. Variável `words` não reconhecida no `TypingEffect`
+
+- **Causa:** `src/components/ui/TypingEffect.astro:67` usa `words` dentro de um script inline com `define:vars`; o analisador não reconhece a variável injetada nesse contexto.
+- **Impacto:** é um diagnóstico real do analisador, mas não prova sozinho uma falha em runtime. O efeito de digitação precisa ser testado no navegador, inclusive após navegação e com mais de uma palavra.
+- **Prioridade:** média.
+- **Próximo passo:** confirmar o JavaScript emitido e o comportamento do componente em desktop/mobile; depois decidir entre ajustar a forma de injeção ou aceitar o hint como limitação do analisador.
+
+## Outros avisos e bloqueios encontrados
+
+### 8. Aviso de `punycode` depreciado no Node
+
+- **Causa:** o Node emite `[DEP0040] DeprecationWarning: The punycode module is deprecated` durante `check` e `build`; a origem transitiva ainda não foi identificada.
+- **Impacto:** não interrompeu nenhuma dessas duas tarefas, mas pode vir de dependência desatualizada e desaparecer ou virar erro após atualização do Node.
+- **Prioridade:** baixa.
+- **Próximo passo:** executar com rastreamento de deprecações e localizar a dependência responsável antes de atualizar ou substituir qualquer pacote.
+
+### 9. Warnings do ESLint em `scripts/verify-build.mjs`
+
+- **Causa:** `scripts/verify-build.mjs:60` e `:123` usam `console.log`, restringido pela regra `no-console`.
+- **Impacto:** `pnpm.cmd lint` ainda retorna sucesso, mas a saída não está sem warnings e o script de verificação fica fora do padrão de lint adotado.
+- **Prioridade:** baixa.
+- **Próximo passo:** decidir se a saída do verificador deve ser permitida explicitamente ou migrada para os métodos aceitos pela configuração do ESLint, sem alterar seu comportamento.
+
+### 10. Suíte Vitest não inicia neste ambiente Windows
+
+- **Causa observada:** `pnpm.cmd test:run` falha antes de carregar os testes; o esbuild relata `Could not resolve ... vitest.config.ts` e `Cannot read directory "../../..": Acesso negado`. O arquivo de configuração existe no repositório.
+- **Impacto:** os testes unitários não foram executados; portanto, não há evidência atual de aprovação ou falha dos testes do projeto.
+- **Prioridade:** média.
+- **Próximo passo:** reproduzir o comando fora da restrição de acesso do ambiente e confirmar se o problema é a resolução do config no Windows, a versão do Vitest/esbuild ou a política de permissões. Só então classificar como defeito do projeto.
+
+## Itens não confirmados como pendência atual
+
+- O aviso antigo sobre `baseUrl` não se reproduziu: o `tsconfig.json` atual não declara `baseUrl`.
+- Não há base, nesta execução, para considerar favicon, identidade, traduções ou links do template como pendências técnicas: são decisões de personalização e não foram incluídas neste inventário de falhas verificadas.
+- O build não foi considerado concluído; a etapa de `verify` não foi usada como aprovação porque o build falhou antes de produzir um artefato Vercel completo.
