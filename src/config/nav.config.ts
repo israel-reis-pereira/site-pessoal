@@ -142,6 +142,8 @@ export const footerLinkGroups: FooterLinkGroupConfig[] = [
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/israel-silva-dos-reis-pereira', external: true },
       { label: 'Bluesky', href: 'https://bsky.app/profile/israel-reis-pereira.bsky.social', external: true },
       { label: 'Instagram', href: 'https://instagram.com/israelsilvadosreispereira', external: true },
+      { label: 'Twitter', href: 'https://x.com/israelsilvareis', external: true },
+      { label: 'Discord', href: 'https://discord.com/users/926340772897370122', external: true },
     ],
   },
 ];
